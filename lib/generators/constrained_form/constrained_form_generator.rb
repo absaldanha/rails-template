@@ -9,11 +9,11 @@ require "shellwords"
 def add_template_repository_to_source_path
   if __FILE__ =~ %r{\Ahttps?://}
     require "tmpdir"
-    source_paths.unshift(tempdir = Dir.mktmpdir("jumpstart-"))
+    source_paths.unshift(tempdir = Dir.mktmpdir("rails-template-"))
     at_exit { FileUtils.remove_entry(tempdir) }
     git clone: [
       "--quiet",
-      "https://github.com/absaldanha/rails-template.git",
+      "git@github.com:absaldanha/rails-template.git",
       tempdir
     ].map(&:shellescape).join(" ")
 
