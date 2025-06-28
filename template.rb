@@ -17,7 +17,7 @@ def add_template_repository_to_source_path
       tempdir
     ].map(&:shellescape).join(" ")
 
-    source_paths.unshift(File.dirname(tempdir))
+    source_paths.unshift(File.dirname(File.join(tempdir, "template.rb"))
   else
     source_paths.unshift(File.dirname(__FILE__))
   end
