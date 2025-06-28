@@ -24,4 +24,4 @@ def add_template_repository_to_source_path
 end
 
 add_template_repository_to_source_path
-copy_file "lib/constrained_form/form_builer.rb"
+copy_file "lib/constrained_form/form_builder.rb"
